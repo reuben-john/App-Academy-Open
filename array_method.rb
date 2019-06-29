@@ -46,3 +46,22 @@ end
 
 puts abbreviate_sentence("follow the yellow brick road") # => "fllw the yllw brck road"
 puts abbreviate_sentence("what a wonderful life")        # => "what a wndrfl life"
+
+# Hint: use str.upcase and str.downcase
+# "abc".upcase # => "ABC"
+
+def format_name(str)
+  norm_arr = []
+  str_arr = str.split(" ")
+
+  str_arr.each do |word|
+    word = word.downcase
+    word[0] = word[0].upcase
+    norm_arr << word
+  end
+
+  return norm_arr.join(" ")
+end
+
+puts format_name("chase WILSON") # => "Chase Wilson"
+puts format_name("brian CrAwFoRd scoTT") # => "Brian Crawford Scott"
