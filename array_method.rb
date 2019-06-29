@@ -81,3 +81,30 @@ puts is_valid_name("Kush Patel")       # => true
 puts is_valid_name("Daniel")           # => false
 puts is_valid_name("Robert Downey Jr") # => true
 puts is_valid_name("ROBERT DOWNEY JR") # => false
+
+# For simplicity, we'll consider an email valid when it satisfies all of the following:
+# - contains exactly one @ symbol
+# - contains only lowercase alphabetic letters before the @
+# - contains exactly one . after the @
+
+puts "Validate Email"
+
+def is_valid_email(str)
+  at_split = str.split("@")
+  dot_split = at_split[-1].split(".")
+
+  if at_split.length > 2 || dot_split.length > 2 || at_split.length <= 1 || dot_split.length <= 1
+    return false
+  elsif at_split[0] == at_split[0].downcase && !/\d/.match(at_split[0])
+    return true
+  else
+    return false
+  end
+end
+
+puts is_valid_email("abc@xy.z")         # => true
+puts is_valid_email("jdoe@gmail.com")   # => true
+puts is_valid_email("jdoe@g@mail.com")  # => false
+puts is_valid_email("jdoe42@gmail.com") # => false
+puts is_valid_email("jdoegmail.com")    # => false
+puts is_valid_email("az@email")         # => false
