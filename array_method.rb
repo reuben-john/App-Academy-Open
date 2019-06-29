@@ -93,7 +93,7 @@ def is_valid_email(str)
   at_split = str.split("@")
   dot_split = at_split[-1].split(".")
 
-  if at_split.length > 2 || dot_split.length > 2 || at_split.length <= 1 || dot_split.length <= 1
+  if at_split.length != 2 || dot_split.length != 2
     return false
   elsif at_split[0] == at_split[0].downcase && !/\d/.match(at_split[0])
     return true
