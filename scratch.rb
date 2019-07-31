@@ -637,5 +637,39 @@ sorted = count.sort_by { |k, v| v}
 puts
 
 print sorted[-1] 
+puts
 
+# map modifies each element in an array
+arr = ["a", "b", "c", "d"]
+new_arr = arr.map {|ele| ele.upcase + "!"}
+puts new_arr
 
+# select filters true/false items
+nums = [1, 2, 3, 4, 5, 6]
+evens = nums.select {|num| num % 2 == 0}
+puts evens
+
+arr =["apple", "bootCAMP", "caRrot", "Dancer"]
+
+new_arr = arr.map {|word| word[0].upcase + word[1..-1].downcase}
+puts new_arr
+
+# return must be the last line
+new_arr = arr.map do |ele|
+  first_char = ele[0].upcase
+  rest = ele[1..-1].downcase
+  first_char + rest
+end
+
+print new_arr
+puts
+
+new_arr = arr.map.with_index do |ele, i|
+  first_char = ele[0].upcase
+  rest = ele[1..-1].downcase
+  new_word = first_char + rest
+  new_word * i
+end
+
+print new_arr
+puts
