@@ -525,3 +525,117 @@ end
 print fizz_buzz(20) # => [4, 6, 8, 16, 18]
 puts
 print fizz_buzz(15) # => [4, 6, 8]
+puts
+#  Hashes
+my_hash = {
+  "name" => "App Academy",
+  "color" => "red",
+  "age" => 5,
+  "isAwesome" => true,
+  42 => "hello"
+}
+
+puts my_hash[42]
+
+dog = {
+  "name" => "Fido",
+  "color" => "black",
+  "age" => 3,
+  "isHungry" => true,
+  "enemies" => ["squirrel"]
+}
+
+dog["name"] = "Spot"
+dog["location"] = "park"
+dog["enemies"].push("bigger dogs")
+puts  dog
+
+puts dog.has_key?("location")
+puts dog.has_key?("nowayman")
+puts dog.has_value?("black")
+
+puts dog.keys
+puts dog.values
+
+# good aray data - all same type and easily grokked
+animals = ["dog", "cat", "fish", "bird"]
+
+# bad array data - mixed types - not clear what use is
+person = ["Alvin", 100, "New York", "burgers", true]
+
+# use a hash instead
+
+better_person = {
+  "name" => "Alvin",
+  "age" => 100,
+  "location" => "New York",
+  "favorite" => "burgers",
+  "isHungry" => true
+}
+
+puts better_person["location"]
+
+pizza = {
+  "style" => "New York",
+  "slices" => 8,
+  "diameter" => "15 inches",
+  "toppings" => ["mushrooms", "green peppers"],
+  "is_tasty" => true
+}
+
+pizza.each do |k, v|
+  puts k
+  puts v
+  puts "-------"
+end
+
+pizza.each_key do |k|
+  puts k
+end
+
+pizza.each_value do |val|
+  puts val
+end
+
+# default hash value is nil
+
+my_hash["nope"] == nil
+
+## can set new default values
+
+my_new_hash = Hash.new("new default value")
+my_new_hash["a"] = "goodbye"
+
+puts my_new_hash["nope"]
+puts my_new_hash
+
+counter = Hash.new(0)
+
+str = "bootcamp prep"
+
+str.each_char do |char| 
+  puts char
+  counter[char] += 1
+  puts counter
+end
+puts counter
+
+my_key = "a"
+puts my_new_hash[my_key]
+
+str = "mississisppi river"
+
+count = Hash.new(0)
+
+str.each_char do |char|
+  count[char] += 1
+end
+
+print count
+puts
+sorted = count.sort_by { |k, v| v}
+puts
+
+print sorted[-1] 
+
+
