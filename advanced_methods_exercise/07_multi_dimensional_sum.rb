@@ -2,7 +2,7 @@
 # and returns the sum of all numbers in the array.
 
 def multi_dimensional_sum(*arr)
-  return arr.flatten.inject { |acc, el| acc + el }
+  arr.flatten.inject { |acc, el| acc + el }
 end
 
 arr_1 = [

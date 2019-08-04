@@ -1,14 +1,16 @@
 # Write a method, adult_in_group?(people), that accepts an array containing people.
-# The method should return true if there is at least 1 person with an age of 18 or greater.
-# The method should return false otherwise.
+# The method should true if there is at least 1 person with an age of 18 or greater.
+# The method should false otherwise.
 
 def adult_in_group?(people)
-  people.each do |person|
-    if person[:age] > 18
-      return true
-    end
-  end
-  return false
+  # people.each do |person|
+  #   if person[:age] > 18
+  #     true
+  #   end
+  # end
+  # false
+
+  people.any? { |person| person[:age] >= 18 }
 end
 
 people_1 = [
