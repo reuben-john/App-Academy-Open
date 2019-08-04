@@ -134,3 +134,20 @@ p [11, 7, 2, 4].inject(100) { |acc, el| acc + el } # => 124
     acc
   end
 end # => 6
+
+# Bubble Sort
+def bubble_sort(array)
+  sorted = false
+  while !sorted
+    sorted = true
+
+    (0...array.length - 1).each do |i|
+      if array[i] > array[i + 1]
+        array[i], array[i + 1] = array[i + 1], array[i]
+        sorted = false
+      end
+    end
+  end
+
+  array
+end
